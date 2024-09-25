@@ -24,6 +24,54 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+  <style>
+	.hero-wrap h1, .hero-wrap h2, .hero-wrap .txt-rotate, .hero-wrap .mouse-icon {
+	/* Styles that only affect this specific section */
+	}
+
+	@media (max-width: 768px) {
+	.hero-wrap {
+		height: auto; /* Adjust for smaller screens */
+	}
+
+	.hero-wrap .text {
+		padding: 20px;
+	}
+
+	.hero-wrap h1 {
+		font-size: 28px; /* Smaller font for mobile, specific to this section */
+	}
+
+	.hero-wrap h2 {
+		font-size: 18px; /* Smaller font for mobile */
+	}
+
+	.hero-wrap .txt-rotate {
+		display: block;
+		font-size: 16px;
+		margin-top: 10px;
+	}
+
+	.hero-wrap .mouse-icon {
+		display: none; /* Hide the mouse icon on small screens */
+	}
+	}
+
+	@media (max-width: 480px) {
+	.hero-wrap h1 {
+		font-size: 24px; /* Further size adjustments for very small screens */
+	}
+
+	.hero-wrap h2 {
+		font-size: 16px;
+	}
+
+	.hero-wrap .txt-rotate {
+		font-size: 14px;
+	}
+	}
+
+</style>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
 	  
@@ -46,8 +94,8 @@
 	        </ul>
 	      </div>
 	    </div>
-	  </nav>
-	  <section class="hero-wrap js-fullheight">
+	</nav>
+	<section class="hero-wrap js-fullheight">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
@@ -71,7 +119,7 @@
 					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
 				</a>
 			</div>
-    </section>
+   	</section>
 
     <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
     	<div class="container">
