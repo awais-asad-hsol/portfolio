@@ -1,12 +1,10 @@
 
-# M. Awais Asad - Full Stack Developer Portfolio
-
 Welcome to my portfolio! I'm **M. Awais Asad**, a passionate Full Stack Laravel and Node.js developer with over 5 years of experience in building high-quality web applications. This portfolio showcases my work, skills, and the technologies I specialize in. Feel free to explore and get in touch if you have any questions or would like to collaborate!
 
 ## Live Portfolio
 
 You can view the live version of my portfolio here:  
-[https://awais-asad-hsol.github.io/portfolio/](https://awais-asad-hsol.github.io/portfolio/)
+https://awais-asad-hsol.github.io/portfolio
 
 ## About Me
 
