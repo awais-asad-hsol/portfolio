@@ -41,8 +41,3 @@ For more details on these and other projects, please visit my portfolio link abo
 - **LinkedIn**: [linkedin.com/in/awais-asad](https://www.linkedin.com/in/awais-asad)
 - **GitHub**: [github.com/awais-asad-hsol](https://github.com/awais-asad-hsol)
 
-## License
-
-This project is licensed under the MIT License. Feel free to fork, modify, and use it for your own purposes!
-
----
