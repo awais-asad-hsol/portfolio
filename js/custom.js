@@ -71,7 +71,7 @@
             navbar.classList.remove('scrolled');
         }
 
-        // Update active nav link
+        // Update active nav link (only for main navigation, not tab buttons)
         const sections = document.querySelectorAll('section[id]');
         const scrollY = window.pageYOffset;
 
@@ -79,10 +79,11 @@
             const sectionHeight = current.offsetHeight;
             const sectionTop = current.offsetTop - 100;
             const sectionId = current.getAttribute('id');
-            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            const navLink = document.querySelector(`#mainNav .nav-link[href="#${sectionId}"]`);
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelectorAll('.nav-link').forEach(link => {
+                // Only remove active from main navbar links, not tab buttons
+                document.querySelectorAll('#mainNav .nav-link').forEach(link => {
                     link.classList.remove('active');
                 });
                 if (navLink) {
@@ -229,9 +230,10 @@
         // Get the target tab pane ID
         const targetId = clickedButton.getAttribute('data-bs-target');
         
-        // Remove active class from all nav buttons
+        // Remove active class and aria-selected from all nav buttons
         resumeTabButtons.forEach(btn => {
             btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
         });
         
         // Remove active and show classes from all tab panes
@@ -239,8 +241,9 @@
             pane.classList.remove('active', 'show');
         });
         
-        // Add active class to clicked button
+        // Add active class and aria-selected to clicked button
         clickedButton.classList.add('active');
+        clickedButton.setAttribute('aria-selected', 'true');
         
         // Show the target tab pane
         const targetPane = document.querySelector(targetId);
@@ -255,6 +258,31 @@
             e.preventDefault();
             switchResumeTab(this);
         });
+    });
+
+    // Initialize Skills tab as active on page load
+    window.addEventListener('DOMContentLoaded', function() {
+        const skillsButton = document.getElementById('skills-tab');
+        const skillsPane = document.getElementById('skills-tab-content');
+        
+        // Ensure Skills tab is active
+        if (skillsButton && skillsPane) {
+            // Remove active from all buttons
+            resumeTabButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            
+            // Remove active/show from all panes
+            resumeTabPanes.forEach(pane => {
+                pane.classList.remove('active', 'show');
+            });
+            
+            // Set Skills as active
+            skillsButton.classList.add('active');
+            skillsButton.setAttribute('aria-selected', 'true');
+            skillsPane.classList.add('active', 'show');
+        }
     });
 
 })();
