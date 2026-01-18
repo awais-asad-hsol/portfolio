@@ -55,6 +55,7 @@
     right: 20px;
     width: 380px;
     max-width: calc(100vw - 40px);
+    min-width: 300px;
     height: 500px;
     max-height: calc(100vh - 120px);
     background: white;
@@ -333,35 +334,38 @@
 /* Responsive Design */
 
 /* Tablet (768px and below) */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .chatbot-container {
-        width: 360px;
-        max-width: calc(100vw - 40px);
+        width: 360px !important;
+        max-width: calc(100vw - 40px) !important;
+        min-width: 320px !important;
     }
     
     .chatbot-message {
-        max-width: 82%;
+        max-width: 82% !important;
     }
 }
 
 /* Mobile (576px and below) */
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
     .chatbot-container {
-        bottom: 80px;
-        right: 10px;
-        left: 10px;
-        width: auto;
-        height: calc(100vh - 100px);
-        max-height: calc(100vh - 100px);
-        border-radius: 12px;
+        bottom: 80px !important;
+        right: 10px !important;
+        left: 10px !important;
+        width: auto !important;
+        min-width: unset !important;
+        height: calc(100vh - 100px) !important;
+        max-height: calc(100vh - 100px) !important;
+        max-width: calc(100vw - 20px) !important;
+        border-radius: 12px !important;
     }
 
     .chatbot-button {
-        bottom: 15px;
-        right: 15px;
-        width: 55px;
-        height: 55px;
-        font-size: 1.3rem;
+        bottom: 15px !important;
+        right: 15px !important;
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.3rem !important;
     }
 
     .chatbot-header {
@@ -410,20 +414,22 @@
 }
 
 /* Very small mobile (400px and below) */
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .chatbot-container {
-        bottom: 75px;
-        right: 5px;
-        left: 5px;
-        max-width: calc(100vw - 10px);
+        bottom: 75px !important;
+        right: 5px !important;
+        left: 5px !important;
+        width: auto !important;
+        min-width: unset !important;
+        max-width: calc(100vw - 10px) !important;
     }
 
     .chatbot-button {
-        bottom: 12px;
-        right: 12px;
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        bottom: 12px !important;
+        right: 12px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
     }
 
     .chatbot-messages {
