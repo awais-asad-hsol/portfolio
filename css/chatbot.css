@@ -273,6 +273,9 @@
     outline: none;
     transition: all 0.3s ease;
     box-sizing: border-box;
+    /* Prevent zoom on mobile when focusing */
+    -webkit-text-size-adjust: 100%;
+    -webkit-appearance: none;
 }
 
 .chatbot-input:focus {
@@ -428,10 +431,11 @@
 
     .chatbot-input {
         padding: 0.625rem 0.875rem !important;
-        font-size: 0.9rem !important;
+        font-size: 16px !important; /* 16px prevents auto-zoom on mobile */
         min-width: 0 !important;
         flex: 1 !important;
         width: auto !important;
+        transform: scale(1); /* Prevents zoom */
     }
 
     .chatbot-send {
@@ -483,7 +487,8 @@
 
     .chatbot-input {
         padding: 0.5rem 0.75rem !important;
-        font-size: 0.85rem !important;
+        font-size: 16px !important; /* 16px prevents auto-zoom on mobile */
+        transform: scale(1); /* Prevents zoom */
     }
 
     .chatbot-send {
