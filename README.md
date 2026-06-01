@@ -1,43 +1,43 @@
-Welcome to my portfolio! I'm **M. Awais Asad**, a passionate Full Stack Laravel, Node.js, Vue.js, and AI developer with over 6 years of experience in building high-quality web applications. This portfolio showcases my work, skills, and the technologies I specialize in. Feel free to explore and get in touch if you have any questions or would like to collaborate!
+Welcome to my portfolio! I'm **M. Awais Asad**, a **Lead Full-Stack Engineer** specializing in Laravel, Vue.js, Node.js, and AI-powered systems with over **7 years of experience** building scalable SaaS platforms and enterprise web applications. This portfolio showcases my work, skills, and the technologies I specialize in. Feel free to explore and get in touch!
 
 ## Live Portfolio
 
-You can view the live version of my portfolio here:  
 https://awais-asad-hsol.github.io/portfolio
 
 ## About Me
 
-I am a full-stack software engineer with 6+ years of experience building scalable and secure web applications across diverse domains. I focus on backend-centric systems complemented by modern frontend architectures to deliver reliable and user-friendly products.
+Lead Full-Stack Engineer with 7+ years of experience designing, developing, and scaling SaaS platforms, enterprise web applications, and secure authentication systems. Specialized in Laravel, Vue.js, Node.js, and modern full-stack architectures, with a strong focus on scalability, security, and maintainability.
 
-My experience includes API design, authentication and authorization systems (including SSO), and full-stack development using contemporary tools and best practices. In recent projects, I have worked extensively with Vue.js and Inertia.js to deliver seamless SPA-like experiences on top of Laravel, while also adopting other modern full-stack technologies to build performant, production-ready applications.
+Proven experience leading technical initiatives, architecting Single Sign-On (SSO) solutions, implementing Multi-Factor Authentication (MFA), designing RESTful APIs, and modernizing legacy applications. Experienced in mentoring developers, driving technical decisions, and delivering high-quality software across multiple business domains.
 
-I also have hands-on experience integrating AI-powered features such as chatbots, automation workflows, and AI agents, and I continuously apply current engineering practices to build future-ready software solutions.
+Passionate about building reliable, secure, and future-ready systems while leveraging AI-powered solutions, automation workflows, and modern engineering practices to solve complex business challenges.
 
 ## Experience
 
-### Sr. Software Developer - Heuristic Sol Pvt Ltd (Aug 2022 - Present)
-- Designed and implemented a complete Single Sign-On (SSO) platform supporting multiple portals, including secure authentication, authorization, and centralized access control.
+### Tech Lead — HeuristicSol Pvt Ltd (Aug 2022 - Present)
+- Architected and delivered a centralized SSO platform serving 10+ business portals and thousands of users.
+- Implemented OAuth2, MFA, RBAC, and JWT authentication for secure access management.
 - Built and maintained admin and management portals to manage users, roles, permissions, configurations, and platform operations.
-- Implemented multi-factor authentication (MFA) and advanced security mechanisms to enhance system protection and compliance.
-- Developed and exposed RESTful APIs to enable seamless integration between internal services and external portals.
-- Integrated Laravel Horizon to manage queues and background jobs, improving performance, reliability, and observability of asynchronous processes.
+- Developed REST APIs consumed by multiple internal and external applications.
+- Optimized background processing using Laravel Horizon and Redis queues.
 - Leading the development of Version 2 of the platform, modernizing existing portals using a latest full-stack setup (Laravel, Vue.js, and Inertia.js) to improve scalability, maintainability, and user experience.
+- Managed technical direction and mentored developers.
 
-### Team Lead - TechOrix PVT LTD (Feb 2021 - Aug 2022)
-- Developed Car Booking Product from scratch by using Laravel Framework and MySQL Database.
+### Software Engineer — TechOrix Pvt Ltd (Feb 2021 - Aug 2022)
+- Developed Car Booking Product from scratch using Laravel Framework and MySQL Database.
 - Managed other products like POS, RMS etc.
-- Integrated various third party APIs like Google Map, Payment Gateways etc.
+- Integrated various third-party APIs like Google Maps, Payment Gateways etc.
 - Used modern technologies and programming languages.
 - Collaborated with team members and clients to achieve target results.
 
-### Full Stack Developer - MST Developers (June 2019 - Jan 2021)
+### Full Stack Developer — MST Developer (Jun 2019 - Jan 2021)
 - Defined and maintained databases to deliver responsiveness to data client requests.
 - Built APIs and Projects from scratch.
 - Collaborated with multidisciplinary team of designers, developers and system administrators.
 - Integrated front-end elements into applications.
 - Created enhancements to resolve client problems and meet operational standards.
 
-### Full Stack Developer Intern - Vroozi INC (Mar 2019 - May 2019)
+### Full Stack Developer Intern — Vroozi INC (Mar 2019 - May 2019)
 - Assisted project manager to prepare implementation plan from technical perspective.
 - Adapted and understood Agile and Scrum methodologies.
 - Wrote high-quality code to meet customer requirements.
@@ -45,34 +45,52 @@ I also have hands-on experience integrating AI-powered features such as chatbots
 
 ## Featured Projects
 
-### 1. Single Sign-On (SSO) Platform  
-A complete SSO platform supporting multiple portals, built with secure authentication, authorization, and centralized access control. Features include multi-factor authentication (MFA), RESTful APIs, and Laravel Horizon integration for queue management.  
-**Technology Stack:** Laravel, Vue.js, Inertia.js, MySQL, RESTful APIs, Laravel Horizon, MFA.
+### SSO Platform — One Constellation
+A centralized SSO platform serving 10+ business portals with OAuth2, MFA, RBAC, and JWT authentication.  
+**Live:** https://one-constellation.com | https://auth.sso.one-constellation.com | https://admin.sso.one-constellation.com | https://mgmt.sso.one-constellation.com  
+**Stack:** Laravel, Vue.js, Inertia.js, MySQL, Redis, Laravel Horizon
 
-### 2. Car Booking Product  
-A full-featured car booking platform built using **Laravel** and **MySQL**, integrated with Google Maps and third-party payment gateways.  
-**Technology Stack:** Laravel, MySQL, Google Maps API, Payment Gateways.
+### Jobs Portal
+A job listing and management portal integrated with the SSO platform.  
+**Live:** https://jobs.one-constellation.com  
+**Stack:** Laravel, Vue.js, Inertia.js
 
-### 3. E-KYC Authentication Server  
-An authentication server for E-KYC built with **Laravel** and **Node.js** to ensure secure user authorization processes.  
-**Technology Stack:** Laravel, Node.js, JWT, OAuth.
+### Eight Tones Store
+E-commerce platform built with Laravel.  
+**Live:** https://eight-tones.store
 
-### 4. POS and RMS Systems  
-Led the development and maintenance of Point-of-Sale (POS) and Retail Management Systems (RMS) with multi-layered functionalities.  
-**Technology Stack:** Laravel, Vue.js, MySQL.
+### Shoe Inventory System
+Inventory management system for shoe retail.  
+**Live:** https://shoeinventory.net/public
 
-For more details on these and other projects, please visit my portfolio link above.
+### Sarwan Trader
+Business platform for trading operations.  
+**Live:** https://sarwantrader.com
+
+### GeoPak International Hospital
+Healthcare platform for hospital management.  
+**Live:** https://geopakintlhospital.com
+
+### VoltSpeak
+**Live:** https://voltspeak.com
+
+### Car Booking Product
+A full-featured chauffeur/taxi booking platform with Google Maps and payment gateway integrations.  
+**Stack:** Laravel, MySQL, Google Maps API, Payment Gateways
+
+### POS & RMS Systems
+Point-of-Sale and Retail Management Systems with multi-layered functionalities.  
+**Stack:** Laravel, Vue.js, MySQL
 
 ## Skills and Technologies
 
-- **Languages & Frameworks**: PHP (Laravel), JavaScript (Node.js, Vue.js, Express.js), Inertia.js, Alpine.js, HTML5, CSS3, Bootstrap
-- **Databases**: MySQL, Sequelize
-- **APIs & Integrations**: REST APIs, Third-Party API Integrations (Google Maps, Payment Gateways)
-- **Security**: JWT Authentication, OAuth, SSO, Multi-Factor Authentication (MFA)
-- **Cloud & DevOps**: GCP (Google Cloud Platform), Docker, Git, GitHub
-- **Queue Management**: Laravel Horizon
-- **AI Integration**: Chatbots, Automation Workflows, AI Agents
-- **Version Control**: Git, GitHub
+- **Backend & APIs:** PHP (Laravel), Node.js (Express), REST APIs, OAuth2, JWT, Passport, Sanctum
+- **Frontend & SPA:** Vue.js, Inertia.js, Alpine.js, Bootstrap, Filament, HTML5, CSS3
+- **Databases & ORMs:** MySQL, Sequelize, Redis
+- **Architecture & Design:** System Design, Microservices, Event-Driven Architecture, RBAC, SSO & Identity Management
+- **Queues, Monitoring & DevOps:** Laravel Horizon, Telescope, Pulse, Docker, Git, GitHub
+- **AI & Automation:** AI chatbots & assistants, AI automation workflows, AI agents via API integrations
+- **Cloud:** GCP (Google Cloud Platform)
 
 ## Get in Touch
 

@@ -911,17 +911,7 @@ html {
 }
 
 .nav-pills .nav-link.active::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid rgba(255, 255, 255, 0.2);
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    z-index: 1;
+    display: none;
 }
 
 .nav-pills .nav-link.active i {
