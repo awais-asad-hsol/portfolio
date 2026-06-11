@@ -104,16 +104,29 @@
         }
     }
 
-    // Show welcome message
+    // Show welcome message with suggested questions
     function showWelcomeMessage() {
         if (chatbotMessages && chatbotMessages.children.length === 0) {
             const welcomeHTML = `
                 <div class="chatbot-welcome">
                     <h6>👋 Welcome!</h6>
                     <p>I'm here to help. Feel free to ask me anything about my portfolio, skills, or experience.</p>
+                    <div class="chatbot-chips">
+                        <button type="button" class="chatbot-chip">What's your experience with SSO?</button>
+                        <button type="button" class="chatbot-chip">What technologies do you use?</button>
+                        <button type="button" class="chatbot-chip">Are you available for freelance?</button>
+                    </div>
                 </div>
             `;
             chatbotMessages.innerHTML = welcomeHTML;
+
+            // Clicking a chip sends that question
+            chatbotMessages.querySelectorAll('.chatbot-chip').forEach(function(chip) {
+                chip.addEventListener('click', function() {
+                    chatbotInput.value = chip.textContent;
+                    sendMessage();
+                });
+            });
         }
     }
 
@@ -177,7 +190,7 @@
         .catch(error => {
             hideTyping();
             console.error('Chatbot error:', error);
-            addMessage('Sorry, I encountered an error. Please make sure the backend API is running at ' + API_URL, 'bot', 'error');
+            addMessage("Sorry, I couldn't reach the assistant right now. Please try again in a moment, or email me directly at awaisasad20@gmail.com.", 'bot', 'error');
         })
         .finally(() => {
             // Re-enable input and send button

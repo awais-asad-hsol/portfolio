@@ -2,72 +2,183 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
-    <title>Portfolio - Muhammad Awais Asad</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muhammad Awais Asad — Lead Full-Stack Engineer</title>
+    <meta name="description" content="Lead Full-Stack Engineer with 7+ years of experience building scalable SaaS platforms, SSO &amp; authentication systems, and AI-powered solutions with Laravel, Vue.js and Node.js.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammad Awais Asad — Lead Full-Stack Engineer">
+    <meta property="og:description" content="7+ years building scalable SaaS platforms, SSO &amp; authentication systems, and AI-powered solutions. Laravel · Vue.js · Node.js.">
+    <meta property="og:image" content="https://awais-asad-hsol.github.io/portfolio/images/awais_asad.jpg">
+    <meta property="og:url" content="https://awais-asad-hsol.github.io/portfolio/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0f16'/%3E%3Ctext x='50' y='68' font-size='52' font-family='monospace' font-weight='bold' fill='%232dd4bf' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons (icon font only) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/custom.css">
-    
-    <!-- Chatbot CSS -->
     <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home-section">Muhammad Awais Asad</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <header class="nav" id="mainNav">
+        <div class="container nav-inner">
+            <a class="nav-brand" href="#home-section">M Awais <span>Asad</span></a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about-section">About</a>
+                <a href="#experience-section">Experience</a>
+                <a href="#skills-section">Skills</a>
+                <a href="#projects-section">Projects</a>
+                <a href="#contact-section">Contact</a>
+                <a href="Awais_CV.pdf" target="_blank" class="nav-cta">Résumé</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home-section">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about-section">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resume-section">Professional Journey</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services-section">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects-section">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact-section">Contact</a></li>
-                </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home-section" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <p class="hero-kicker mono">Hi, my name is</p>
+                <h5 class="hero-title">Muhammad Awais Asad.</h5>
+                <h2 class="hero-subtitle">I'm a <span class="txt-rotate" data-period="2000" data-rotate='["Lead Full-Stack Engineer.", "Laravel Developer.", "Node.js Developer.", "SaaS Architect.", "Tech Lead."]'></span></h2>
+                <p class="hero-lead">Lead Full-Stack Engineer with 7+ years of experience designing scalable SaaS platforms, secure authentication systems, and AI-powered solutions using Laravel, Vue.js, and Node.js.</p>
+                <div class="hero-actions">
+                    <a href="#contact-section" class="btn btn-primary"><i class="bi bi-envelope"></i> Get in touch</a>
+                    <a href="Awais_CV.pdf" target="_blank" class="btn btn-ghost"><i class="bi bi-download"></i> Download CV</a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <div class="photo-ring">
+                    <img src="images/awais_asad.jpg" alt="Muhammad Awais Asad" loading="eager">
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section id="home-section" class="hero-section">
+    <!-- About -->
+    <section id="about-section" class="section">
         <div class="container">
-            <div class="row min-vh-100 align-items-center position-relative" style="z-index: 1;">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <p class="hero-greeting">Hey! I am</p>
-                    <h1 class="hero-title">M Awais Asad</h1>
-                    <h2 class="hero-subtitle mb-4">
-                        I'm a <span class="txt-rotate" data-period="2000" data-rotate='["Lead Full-Stack Engineer.", "Laravel Developer.", "NodeJs Developer.", "SaaS Architect.", "Tech Lead."]'></span>
-                    </h2>
-                    <p class="lead text-white-50 mb-4" style="font-size: 1.2rem; line-height: 1.8;">
-                        Lead Full-Stack Engineer with 7+ years of experience designing scalable SaaS platforms, secure authentication systems, and AI-powered solutions using Laravel, Vue.js, and Node.js.
-                    </p>
-                    <div class="d-flex gap-3 flex-wrap">
-                        <a href="#contact-section" class="btn btn-primary btn-lg px-4 py-3">
-                            <i class="bi bi-envelope me-2"></i>Get In Touch
-                        </a>
-                        <a href="Awais_CV.pdf" class="btn btn-outline-light btn-lg px-4 py-3" target="_blank">
-                            <i class="bi bi-download me-2"></i>Download CV
-                        </a>
+            <h2 class="section-title reveal"><span class="mono section-num">01.</span> About me</h2>
+            <div class="about-grid reveal">
+                <div class="about-text">
+                    <p>I'm a Lead Full-Stack Engineer with 7+ years of experience designing, developing, and scaling SaaS platforms, enterprise web applications, and secure authentication systems — specialized in <strong>Laravel</strong>, <strong>Vue.js</strong>, and <strong>Node.js</strong>, with a strong focus on scalability, security, and maintainability.</p>
+                    <p>I've led technical initiatives end-to-end: architecting Single Sign-On (SSO) solutions, implementing Multi-Factor Authentication, designing RESTful APIs, and modernizing legacy applications, while mentoring developers and driving technical decisions.</p>
+                    <p>I'm passionate about building reliable, future-ready systems and leveraging AI-powered solutions and automation workflows to solve complex business challenges.</p>
+                </div>
+                <div class="about-facts">
+                    <div class="fact"><i class="bi bi-geo-alt"></i><span>Lahore, Pakistan</span></div>
+                    <div class="fact"><i class="bi bi-envelope"></i><a href="mailto:awaisasad20@gmail.com">awaisasad20@gmail.com</a></div>
+                    <div class="fact"><i class="bi bi-telephone"></i><a href="tel:+923324255688">+92-332-4255688</a></div>
+                    <div class="fact"><i class="bi bi-linkedin"></i><a href="https://www.linkedin.com/in/awais-asad/" target="_blank" rel="noopener">linkedin.com/in/awais-asad</a></div>
+                    <div class="fact"><i class="bi bi-github"></i><a href="https://github.com/awais-asad-hsol" target="_blank" rel="noopener">awais-asad-hsol</a></div>
+                </div>
+            </div>
+            <div class="stats-row reveal">
+                <div class="stat"><div class="stat-number" data-target="7">0</div><div class="stat-label">Years experience</div></div>
+                <div class="stat"><div class="stat-number" data-target="50">0</div><div class="stat-label">Projects delivered</div></div>
+                <div class="stat"><div class="stat-number" data-target="10">0</div><div class="stat-label">Portals on one SSO</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience-section" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal"><span class="mono section-num">02.</span> Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-meta">
+                        <span class="mono timeline-date">Aug 2022 — Present</span>
+                    </div>
+                    <div class="timeline-body">
+                        <h3>Tech Lead <span class="at">@ HeuristicSol Pvt Ltd</span></h3>
+                        <ul>
+                            <li>Architected and delivered a centralized SSO platform serving 10+ business portals and thousands of users.</li>
+                            <li>Implemented OAuth2, MFA, RBAC, and JWT authentication for secure access management.</li>
+                            <li>Built and maintained admin and management portals for users, roles, permissions, and platform operations.</li>
+                            <li>Developed REST APIs consumed by multiple internal and external applications.</li>
+                            <li>Optimized background processing with Laravel Horizon and Redis queues.</li>
+                            <li>Leading Version 2 of the platform — modernizing portals on Laravel, Vue.js, and Inertia.js.</li>
+                            <li>Managed technical direction and mentored developers.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-5 text-center">
-                    <div class="hero-image-wrapper position-relative">
-                        <div class="hero-blob"></div>
-                        <div class="hero-image-container">
-                            <img src="images/awais_asad.jpg" alt="Muhammad Awais Asad" class="hero-image img-fluid rounded-circle shadow-lg">
+                <div class="timeline-item reveal">
+                    <div class="timeline-meta">
+                        <span class="mono timeline-date">Feb 2021 — Aug 2022</span>
+                    </div>
+                    <div class="timeline-body">
+                        <h3>Software Engineer <span class="at">@ TechOrix Pvt Ltd</span></h3>
+                        <ul>
+                            <li>Developed a chauffeur/car booking product from scratch with Laravel and MySQL.</li>
+                            <li>Maintained and extended POS and restaurant management products.</li>
+                            <li>Integrated third-party APIs including Google Maps and payment gateways.</li>
+                            <li>Collaborated closely with team members and clients to deliver target results.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-meta">
+                        <span class="mono timeline-date">Jun 2019 — Jan 2021</span>
+                    </div>
+                    <div class="timeline-body">
+                        <h3>Full Stack Developer <span class="at">@ MST Developer</span></h3>
+                        <ul>
+                            <li>Built APIs and full projects from scratch; integrated front-end elements into applications.</li>
+                            <li>Designed and maintained databases for responsive client data delivery.</li>
+                            <li>Worked in a multidisciplinary team of designers, developers, and system administrators.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-meta">
+                        <span class="mono timeline-date">Mar 2019 — May 2019</span>
+                    </div>
+                    <div class="timeline-body">
+                        <h3>Full Stack Developer Intern <span class="at">@ Vroozi Inc</span></h3>
+                        <ul>
+                            <li>Assisted in technical implementation planning; worked within Agile/Scrum.</li>
+                            <li>Designed, developed, and tested software applications.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="education reveal">
+                <h3 class="sub-heading">Education</h3>
+                <div class="edu-list">
+                    <div class="edu-item">
+                        <span class="mono">2014 — 2018</span>
+                        <div>
+                            <strong>BS Computer Science</strong>
+                            <p>University of the Punjab, Lahore</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <span class="mono">2012 — 2014</span>
+                        <div>
+                            <strong>F.Sc. Pre-Engineering</strong>
+                            <p>Punjab College, Lahore</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <span class="mono">2010 — 2012</span>
+                        <div>
+                            <strong>Matriculation</strong>
+                            <p>Jinnah Grammar School, Lahore</p>
                         </div>
                     </div>
                 </div>
@@ -75,839 +186,220 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about-section" class="section-padding">
+    <!-- Skills -->
+    <section id="skills-section" class="section">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="title-underline"></div>
+            <h2 class="section-title reveal"><span class="mono section-num">03.</span> Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group reveal">
+                    <h4><i class="bi bi-hdd-stack"></i> Backend &amp; APIs</h4>
+                    <div class="tags">
+                        <span>PHP</span><span>Laravel</span><span>Node.js (Express)</span><span>REST APIs</span><span>OAuth2</span><span>JWT</span><span>Passport / Sanctum</span>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="about-content-card">
-                        <h3 class="about-subtitle mb-4">Lead Full-Stack Engineer</h3>
-                        <p class="about-text mb-4">Lead Full-Stack Engineer with 7+ years of experience designing, developing, and scaling SaaS platforms, enterprise web applications, and secure authentication systems. Specialized in Laravel, Vue.js, Node.js, and modern full-stack architectures, with a strong focus on scalability, security, and maintainability.</p>
-                        <p class="about-text mb-4">Proven experience leading technical initiatives, architecting Single Sign-On (SSO) solutions, implementing Multi-Factor Authentication (MFA), designing RESTful APIs, and modernizing legacy applications. Experienced in mentoring developers, driving technical decisions, and delivering high-quality software across multiple business domains.</p>
-                        <p class="about-text mb-5">Passionate about building reliable, secure, and future-ready systems while leveraging AI-powered solutions, automation workflows, and modern engineering practices to solve complex business challenges.</p>
-                        
-                        <div class="about-info mb-5">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="info-item">
-                                        <span class="info-label">Name:</span>
-                                        <span class="info-value">Muhammad Awais Asad</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="info-item">
-                                        <span class="info-label">Date of birth:</span>
-                                        <span class="info-value">July 17, 1994</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="info-item">
-                                        <span class="info-label">Email:</span>
-                                        <span class="info-value"><a href="mailto:awaisasad20@gmail.com">awaisasad20@gmail.com</a></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="info-item">
-                                        <span class="info-label">Phone:</span>
-                                        <span class="info-value">+92-332-4255688</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="info-item">
-                                        <span class="info-label">Address:</span>
-                                        <span class="info-value">Building no 88, Sector C, Askari 11, Lahore, Pakistan</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="about-stats">
-                            <div class="row text-center">
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <div class="stat-number" data-target="50">0</div>
-                                        <div class="stat-label">Projects</div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <div class="stat-number" data-target="7">0</div>
-                                        <div class="stat-label">Years Experience</div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <div class="stat-number" data-target="100">0</div>
-                                        <div class="stat-label">Happy Clients</div>
-                            </div>
-                        </div>
-                            </div>
-                        </div>
+                <div class="skill-group reveal">
+                    <h4><i class="bi bi-window"></i> Frontend &amp; SPA Development</h4>
+                    <div class="tags">
+                        <span>JavaScript</span><span>Vue.js</span><span>Inertia.js</span><span>State Management</span><span>SPA Patterns</span><span>Alpine.js</span><span>Bootstrap</span><span>Filament</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h4><i class="bi bi-diagram-3"></i> Architecture &amp; Design</h4>
+                    <div class="tags">
+                        <span>System Design</span><span>Microservices</span><span>Event-Driven Architecture</span><span>SSO &amp; Identity Management</span><span>MFA</span><span>RBAC &amp; Access Control</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h4><i class="bi bi-database"></i> Databases &amp; ORMs</h4>
+                    <div class="tags">
+                        <span>MySQL</span><span>Redis</span><span>Sequelize</span><span>Eloquent</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h4><i class="bi bi-gear-wide-connected"></i> Queues, Monitoring &amp; DevOps</h4>
+                    <div class="tags">
+                        <span>Laravel Horizon</span><span>Telescope / Pulse</span><span>Background Jobs</span><span>Docker</span><span>Git / GitHub</span><span>GCP</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h4><i class="bi bi-cpu"></i> AI &amp; Automation</h4>
+                    <div class="tags">
+                        <span>AI Chatbots &amp; Assistants</span><span>AI Agents via API</span><span>Automation Workflows</span><span>Integrations</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Journey Section -->
-    <section id="resume-section" class="section-padding bg-light">
+    <!-- Projects -->
+    <section id="projects-section" class="section section-alt">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 class="section-title">Professional Journey</h2>
-                    <div class="title-underline"></div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <!-- Left Side - Tabs -->
-                <div class="col-lg-3 mb-4 mb-lg-0">
-                    <ul class="nav nav-pills flex-column" id="resumeTabs" role="tablist">
-                        <li class="nav-item mb-3" role="presentation">
-                            <button class="nav-link active w-100 text-start" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-tab-content" type="button" role="tab" aria-controls="skills-tab-content" aria-selected="true">
-                                <i class="bi bi-stack"></i>
-                                <span>Skills</span>
-                            </button>
-                        </li>
-                        <li class="nav-item mb-3" role="presentation">
-                            <button class="nav-link w-100 text-start" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience" type="button" role="tab" aria-controls="experience" aria-selected="false">
-                                <i class="bi bi-briefcase-fill"></i>
-                                <span>Experience</span>
-                            </button>
-                        </li>
-                        <li class="nav-item mb-3" role="presentation">
-                            <button class="nav-link w-100 text-start" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" type="button" role="tab" aria-controls="education" aria-selected="false">
-                                <i class="bi bi-mortarboard-fill"></i>
-                                <span>Education</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Right Side - Content -->
-                <div class="col-lg-9">
-                    <div class="tab-content" id="resumeTabsContent">
-                        <!-- Skills Tab -->
-                        <div class="tab-pane fade show active" id="skills-tab-content" role="tabpanel" aria-labelledby="skills-tab">
-                            <!-- Technology Stack -->
-                            <div class="row g-4">
-                                <!-- 1. PHP -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">PHP</h5>
-                                    </div>
-                                </div>
-                                <!-- 2. JavaScript -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">JavaScript</h5>
-                                    </div>
-                                </div>
-                                <!-- 3. Laravel -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="brand-logo-img" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-plain.svg'" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Laravel</h5>
-                                    </div>
-                                </div>
-                                <!-- 4. Vue.js -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Vue.js</h5>
-                                    </div>
-                                </div>
-                                <!-- 5. Node.js -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Node.js</h5>
-                                    </div>
-                                </div>
-                                <!-- 6. Express.js -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Express.js</h5>
-                                    </div>
-                                </div>
-                                <!-- 7. Inertia.js -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <svg class="brand-icon inertia-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M50 0L100 25V75L50 100L0 75V25L50 0Z" fill="#9553E9"/>
-                                                <path d="M50 15L25 30V70L50 85L75 70V30L50 15Z" fill="white"/>
-                                            </svg>
-                                        </div>
-                                        <h5 class="tech-icon-name">Inertia.js</h5>
-                                    </div>
-                                </div>
-                                <!-- 8. Alpine.js -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <svg class="brand-icon alpine-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M50 0L100 50L75 75L50 50L25 75L0 50L50 0Z" fill="#77C1D2"/>
-                                                <path d="M50 25L25 37.5V62.5L50 75L75 62.5V37.5L50 25Z" fill="#2D3748"/>
-                                            </svg>
-                                        </div>
-                                        <h5 class="tech-icon-name">Alpine.js</h5>
-                                    </div>
-                                </div>
-                                <!-- 9. AI -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <i class="bi bi-cpu-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
-                                        </div>
-                                        <h5 class="tech-icon-name">AI</h5>
-                                    </div>
-                                </div>
-                                <!-- 10. Bootstrap -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Bootstrap</h5>
-                                    </div>
-                                </div>
-                                <!-- 11. HTML -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">HTML</h5>
-                                    </div>
-                                </div>
-                                <!-- 12. CSS -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">CSS</h5>
-                                    </div>
-                                </div>
-                                <!-- 13. GCP -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">GCP</h5>
-                                    </div>
-                                </div>
-                                <!-- 14. MySQL -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">MySQL</h5>
-                                    </div>
-                                </div>
-                                <!-- 15. Sequelize -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" alt="Sequelize" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Sequelize</h5>
-                                    </div>
-                                </div>
-                                <!-- 16. Redis -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Redis</h5>
-                                    </div>
-                                </div>
-                                <!-- 17. Git -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Git</h5>
-                                    </div>
-                                </div>
-                                <!-- 18. Docker -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="brand-logo-img" />
-                                        </div>
-                                        <h5 class="tech-icon-name">Docker</h5>
-                                    </div>
-                                </div>
-                                <!-- 19. OAuth2 / JWT -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <i class="bi bi-shield-lock-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
-                                        </div>
-                                        <h5 class="tech-icon-name">OAuth2 / JWT</h5>
-                                    </div>
-                                </div>
-                                <!-- 20. Filament -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <i class="bi bi-table" style="font-size: 3rem; color: #f59e0b;"></i>
-                                        </div>
-                                        <h5 class="tech-icon-name">Filament</h5>
-                                    </div>
-                                </div>
-                                <!-- 21. Laravel Horizon -->
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="tech-icon-card">
-                                        <div class="tech-icon-wrapper">
-                                            <i class="bi bi-activity" style="font-size: 3rem; color: #ef4444;"></i>
-                                        </div>
-                                        <h5 class="tech-icon-name">Horizon / Pulse</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Experience Tab -->
-                        <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
-                            <div class="resume-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-icon">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Aug 2022 - Present</span>
-                                <h4>Tech Lead</h4>
-                                <p class="text-primary fw-semibold mb-3">HeuristicSol Pvt Ltd, Lahore</p>
-                                <ul class="list-unstyled mb-0">
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Architected and delivered a centralized SSO platform serving 10+ business portals and thousands of users.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Implemented OAuth2, MFA, RBAC, and JWT authentication for secure access management.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Built and maintained admin and management portals to manage users, roles, permissions, configurations, and platform operations.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Developed REST APIs consumed by multiple internal and external applications.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Optimized background processing using Laravel Horizon and Redis queues.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Leading the development of Version 2 of the platform, modernizing existing portals using a latest full-stack setup (Laravel, Vue.js, and Inertia.js) to improve scalability, maintainability, and user experience.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Managed technical direction and mentored developers.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Feb 2021 - Aug 2022</span>
-                                <h4>Software Engineer</h4>
-                                <p class="text-primary fw-semibold mb-3">TechOrix Pvt Ltd, Lahore</p>
-                                <ul class="list-unstyled mb-0">
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Developed Car Booking Product from scratch by using Laravel Framework and MYSQL Database.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Managed other products like POS, RMS etc.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Integrated various third party API's like Google Map, Payment Gateways etc.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Used modern technologies and programming languages.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Collaborated with team members and clients to achieve target results.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Maintained excellent attendance record, consistently arriving to work on time.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Increased customer satisfaction by resolving issues.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Participated in team-building activities to enhance working relationships.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Participated in continuous improvement by generating suggestions, engaging in problem-solving activities to support teamwork.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Jun 2019 - Jan 2021</span>
-                                <h4>Full Stack Developer</h4>
-                                <p class="text-primary fw-semibold mb-3">MST Developer, Lahore</p>
-                                <ul class="list-unstyled mb-0">
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Defined and maintained databases to deliver responsiveness to data client requests.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Built APIs and Projects from scratch.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Collaborated with multidisciplinary team of designers, developers and system administrators.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Integrated front-end elements into applications.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Created enhancements to resolve client problems and meet operational standards.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Mar 2019 - May 2019</span>
-                                <h4>Full Stack Developer Intern</h4>
-                                <p class="text-primary fw-semibold mb-3">Vroozi INC, Lahore</p>
-                                <ul class="list-unstyled mb-0">
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Assisted project manager to prepare implementation plan from technical perspective.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Adapted and understood Agile and Scrum methodologies.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Wrote high-quality code to meet customer requirements.</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i>Designed, developed and tested software applications.</li>
-                                </ul>
-                            </div>
-                        </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Education Tab -->
-                        <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
-                            <div class="resume-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-icon">
-                                <i class="bi bi-mortarboard"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">2014 - 2018</span>
-                                <h4>Bachelor of Science in Computer Science</h4>
-                                <p class="text-muted mb-0">University Of The Punjab, Lahore</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">
-                                <i class="bi bi-mortarboard"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">2012 - 2014</span>
-                                <h4>F.Sc. Pre-Engineering</h4>
-                                <p class="text-muted mb-0">Punjab College, Lahore</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">
-                                <i class="bi bi-mortarboard"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">2010 - 2012</span>
-                                <h4>Matriculation</h4>
-                                <p class="text-muted mb-0">Jinnah Grammar School, Lahore</p>
-                            </div>
-                        </div>
-                            </div>
-                        </div>
+            <h2 class="section-title reveal"><span class="mono section-num">04.</span> Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card featured reveal">
+                    <div class="project-gallery">
+                        <img src="images/sso1.png" alt="SSO login screen" class="active">
+                        <img src="images/sso2.png" alt="Registration with password policy" loading="lazy">
+                        <img src="images/sso3.png" alt="Email verification step" loading="lazy">
+                        <img src="images/sso4.png" alt="Two-step verification method selection" loading="lazy">
+                        <img src="images/sso5.png" alt="SMS OTP verification" loading="lazy">
+                        <img src="images/sso6.png" alt="Authenticator app QR setup" loading="lazy">
+                        <img src="images/sso7.png" alt="MFA code verification" loading="lazy">
+                        <button class="gallery-btn prev" aria-label="Previous screenshot"><i class="bi bi-chevron-left"></i></button>
+                        <button class="gallery-btn next" aria-label="Next screenshot"><i class="bi bi-chevron-right"></i></button>
+                        <div class="gallery-dots"></div>
                     </div>
-                </div>
+                    <div class="project-info">
+                        <span class="featured-badge mono">★ Featured project</span>
+                        <h3>SSO Auth Portal</h3>
+                        <p>The complete authentication journey for the One Constellation ecosystem — registration with enforced password policy, email verification, and multi-factor auth via email OTP, SMS, or authenticator app (TOTP).</p>
+                        <div class="project-tags mono"><span>Laravel</span> <span>Vue.js</span><span>Inertia.js</span> <span>MySQL</span> <span>OAuth2</span><span>MFA</span></div>
+                        <a class="project-link" href="https://auth.sso.one-constellation.com/login" target="_blank" rel="noopener">View live <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-gallery">
+                        <img src="images/mgmt2.png" alt="Entity management listing" class="active">
+                        <img src="images/mgmt3.png" alt="Activity log" loading="lazy">
+                        <img src="images/mgmt4.png" alt="Entity configuration" loading="lazy">
+                        <img src="images/mgmt5.png" alt="Role management with granular permissions" loading="lazy">
+                        <img src="images/mgmt6.png" alt="User invitation flow" loading="lazy">
+                        <img src="images/mgmt7.png" alt="Queue health monitoring" loading="lazy">
+                        <img src="images/mgmt8.png" alt="Laravel Pulse performance dashboard" loading="lazy">
+                        <button class="gallery-btn prev" aria-label="Previous screenshot"><i class="bi bi-chevron-left"></i></button>
+                        <button class="gallery-btn next" aria-label="Next screenshot"><i class="bi bi-chevron-right"></i></button>
+                        <div class="gallery-dots"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SSO Management Portal</h3>
+                        <p>Operations console for the SSO platform — entity and user management, a granular RBAC role builder, activity audit logs, domain configuration, and live queue/performance monitoring with Laravel Pulse.</p>
+                        <div class="project-tags mono"><span>Laravel</span> <span>Vue.js</span><span>Inertia.js</span> <span>MySQL</span><span>RBAC</span><span>Horizon</span><span>Pulse</span></div>
+                        <a class="project-link" href="https://mgmt.sso.one-constellation.com" target="_blank" rel="noopener">View live <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-gallery">
+                        <img src="images/kyc.png" alt="Guided KYC onboarding wizard" class="active">
+                        <img src="images/kyc1.png" alt="One Constellation portal" loading="lazy">
+                        <img src="images/kyc2.png" alt="Identity management" loading="lazy">
+                        <img src="images/kyc3.png" alt="Accounts dashboard" loading="lazy">
+                        <img src="images/kyc4.png" alt="Compliance workflow" loading="lazy">
+                        <img src="images/kyc5.png" alt="Portfolio view" loading="lazy">
+                        <button class="gallery-btn prev" aria-label="Previous screenshot"><i class="bi bi-chevron-left"></i></button>
+                        <button class="gallery-btn next" aria-label="Next screenshot"><i class="bi bi-chevron-right"></i></button>
+                        <div class="gallery-dots"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>One Constellation Portal</h3>
+                        <p>Compliance and portfolio management platform with a guided KYC onboarding wizard, identity verification flows, and multi-region provider integration including Singpass/MyInfo.</p>
+                        <div class="project-tags mono"><span>Laravel</span><span>Vue.js</span><span>Inertia.js</span><span>KYC</span></div>
+                        <a class="project-link" href="https://portal.one-constellation.com" target="_blank" rel="noopener">View live <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-gallery">
+                        <img src="images/mcl1.png" alt="Chauffeur booking system" class="active">
+                        <img src="images/mcl2.png" alt="Booking management" loading="lazy">
+                        <img src="images/mcl3.png" alt="Fleet overview" loading="lazy">
+                        <button class="gallery-btn prev" aria-label="Previous screenshot"><i class="bi bi-chevron-left"></i></button>
+                        <button class="gallery-btn next" aria-label="Next screenshot"><i class="bi bi-chevron-right"></i></button>
+                        <div class="gallery-dots"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Chauffeur Car Booking System</h3>
+                        <p>Car booking product built from scratch — trip scheduling, fleet and driver management, Google Maps integration, and payment gateway support.</p>
+                        <div class="project-tags mono"><span>Laravel</span><span>MySQL</span><span>Google Maps</span></div>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-gallery">
+                        <img src="images/pos1.png" alt="POS dashboard" class="active">
+                        <img src="images/pos2.png" alt="Sales screen" loading="lazy">
+                        <img src="images/pos3.png" alt="Inventory and reporting" loading="lazy">
+                        <button class="gallery-btn prev" aria-label="Previous screenshot"><i class="bi bi-chevron-left"></i></button>
+                        <button class="gallery-btn next" aria-label="Next screenshot"><i class="bi bi-chevron-right"></i></button>
+                        <div class="gallery-dots"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>POS System</h3>
+                        <p>Point-of-sale system for retail operations — sales processing, inventory tracking, and reporting.</p>
+                        <div class="project-tags mono"><span>Laravel</span><span>MySQL</span></div>
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="sub-heading other-projects-title reveal">Other noteworthy projects</h3>
+            <div class="other-projects reveal">
+                <a class="other-project" href="https://jobs.one-constellation.com" target="_blank" rel="noopener">
+                    <div><h4>Jobs Portal</h4><p>Job listing platform integrated with the SSO ecosystem.</p></div>
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a class="other-project" href="https://voltspeak.com" target="_blank" rel="noopener">
+                    <div><h4>VoltSpeak</h4><p>Full-stack web platform delivered end-to-end.</p></div>
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a class="other-project" href="https://eight-tones.store" target="_blank" rel="noopener">
+                    <div><h4>Eight Tones Store</h4><p>E-commerce storefront with catalog, cart, and checkout.</p></div>
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a class="other-project" href="https://shoeinventory.net/public" target="_blank" rel="noopener">
+                    <div><h4>Shoe Inventory System</h4><p>Inventory tracking for footwear retail.</p></div>
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a class="other-project" href="https://sarwantrader.com" target="_blank" rel="noopener">
+                    <div><h4>Sarwan Trader</h4><p>Business platform for trading operations.</p></div>
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a class="other-project" href="https://geopakintlhospital.com" target="_blank" rel="noopener">
+                    <div><h4>GeoPak International Hospital</h4><p>Healthcare platform with appointment services.</p></div>
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services-section" class="section-padding">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 class="section-title">Services</h2>
-                    <div class="title-underline"></div>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-laptop"></i>
-                        </div>
-                        <h4 class="service-title">Full Stack Web Development</h4>
-                        <p class="service-description">Developing full-stack web applications with modern technologies like PHP, Laravel, Node.js, and Express.js, ensuring both front-end and back-end efficiency.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-cpu-fill"></i>
-                        </div>
-                        <h4 class="service-title">AI Integration & Automation</h4>
-                        <p class="service-description">Building AI-powered chatbots, assistants, and automation workflows. Integrating AI agents via APIs to solve complex business challenges and boost productivity.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-diagram-3"></i>
-                        </div>
-                        <h4 class="service-title">REST APIs</h4>
-                        <p class="service-description">Creating and managing RESTful APIs to enable seamless communication between front-end and back-end, improving application performance.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-plug"></i>
-                        </div>
-                        <h4 class="service-title">Third Party Integrations</h4>
-                        <p class="service-description">Integrating third-party services like payment gateways, social login, and other APIs to extend application functionality.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-database-fill"></i>
-                        </div>
-                        <h4 class="service-title">DBMS</h4>
-                        <p class="service-description">Designing and optimizing databases using MySQL for high-performance, secure, and scalable data storage solutions.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-lightbulb"></i>
-                        </div>
-                        <h4 class="service-title">Product Strategy</h4>
-                        <p class="service-description">Collaborating with teams to develop strategies for product design, user experience, and deployment to ensure successful product development.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects-section" class="section-padding bg-light">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 class="section-title">Projects</h2>
-                    <div class="title-underline"></div>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/kyc.png');">
-                            <div class="project-overlay">
-                                <h5>SSO Platform — One Constellation</h5>
-                                <p class="mb-2">Full Stack · Laravel, Vue.js, Inertia.js</p>
-                                <a href="https://one-constellation.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/kyc1.png');">
-                            <div class="project-overlay">
-                                <h5>SSO Auth Portal</h5>
-                                <p class="mb-2">Authentication · OAuth2, MFA, JWT</p>
-                                <a href="https://auth.sso.one-constellation.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/kyc2.png');">
-                            <div class="project-overlay">
-                                <h5>SSO Admin Portal</h5>
-                                <p class="mb-2">Admin · RBAC, User Management</p>
-                                <a href="https://admin.sso.one-constellation.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/kyc3.png');">
-                            <div class="project-overlay">
-                                <h5>SSO Management Portal</h5>
-                                <p class="mb-2">Admin · Roles, Permissions, Config</p>
-                                <a href="https://mgmt.sso.one-constellation.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/kyc4.png');">
-                            <div class="project-overlay">
-                                <h5>Jobs Portal</h5>
-                                <p class="mb-2">Full Stack · Laravel, Vue.js</p>
-                                <a href="https://jobs.one-constellation.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/kyc5.png');">
-                            <div class="project-overlay">
-                                <h5>VoltSpeak</h5>
-                                <p class="mb-2">Full Stack Development</p>
-                                <a href="https://voltspeak.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/mcl1.png');">
-                            <div class="project-overlay">
-                                <h5>Chauffeur Taxi Booking System</h5>
-                                <p class="mb-2">Full Stack · Laravel, MySQL</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/mcl2.png');">
-                            <div class="project-overlay">
-                                <h5>Eight Tones Store</h5>
-                                <p class="mb-2">E-Commerce · Full Stack</p>
-                                <a href="https://eight-tones.store" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/mcl3.png');">
-                            <div class="project-overlay">
-                                <h5>Shoe Inventory System</h5>
-                                <p class="mb-2">Inventory Management · Laravel</p>
-                                <a href="https://shoeinventory.net/public" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/pos1.png');">
-                            <div class="project-overlay">
-                                <h5>POS System</h5>
-                                <p class="mb-2">Full Stack Development</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/pos2.png');">
-                            <div class="project-overlay">
-                                <h5>Sarwan Trader</h5>
-                                <p class="mb-2">Business Platform · Laravel</p>
-                                <a href="https://sarwantrader.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/pos3.png');">
-                            <div class="project-overlay">
-                                <h5>GeoPak International Hospital</h5>
-                                <p class="mb-2">Healthcare Platform · Full Stack</p>
-                                <a href="https://geopakintlhospital.com" target="_blank" class="btn btn-sm btn-outline-light">View Live</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats-section" class="section-padding">
-        <div class="container">
-            <div class="row g-4 text-center">
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="10000">0</div>
-                        <div class="stat-label">Hours of Work</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="50">0</div>
-                        <div class="stat-label">Completed Projects</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="100">0</div>
-                        <div class="stat-label">Happy Customers</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="1000">0</div>
-                        <div class="stat-label">Cups of Coffee</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hire Me Section -->
-    <section id="hire-section" class="section-padding bg-gradient">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="mb-4 text-white">I'm <span class="text-warning">Available</span> for freelancing</h2>
-                    <p class="lead text-white mb-4">With over 7 years of professional experience, I specialize in delivering high-quality web development services. Whether you're looking for a complete project build or just need an extra hand to meet a deadline, I'm ready to help you achieve your goals.</p>
-                    <p class="lead text-white mb-4">If you are interested in collaborating or want to discuss your next project, feel free to get in touch!</p>
-                    <a href="mailto:awaisasad20@gmail.com" class="btn btn-light btn-lg">
-                        <i class="bi bi-envelope me-2"></i>Hire Me
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact-section" class="section-padding">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 class="section-title">Contact Me</h2>
-                    <div class="title-underline"></div>
-                </div>
-            </div>
-                            <div class="row g-4">
-                                <div class="col-md-6 col-lg-3">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
-                            <i class="bi bi-geo-alt"></i>
-                        </div>
-                        <h5>Address</h5>
-                        <p class="mb-0">Building no 88, Sector C, Askari 11, Lahore, Pakistan</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
-                            <i class="bi bi-telephone"></i>
-                        </div>
-                        <h5>Contact Number</h5>
-                        <p class="mb-0"><a href="tel:+923324255688">+92-332-4255688</a></p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                        <h5>Email Address</h5>
-                        <p class="mb-0"><a href="mailto:awaisasad20@gmail.com">awaisasad20@gmail.com</a></p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
-                            <i class="bi bi-linkedin"></i>
-                        </div>
-                        <h5>LinkedIn</h5>
-                        <p class="mb-0"><a href="https://www.linkedin.com/in/awais-asad/" target="_blank">M Awais Asad</a></p>
-                    </div>
-                </div>
-            </div>
+    <!-- Contact -->
+    <section id="contact-section" class="section contact">
+        <div class="container narrow center">
+            <p class="mono section-num reveal">05. What's next?</p>
+            <h2 class="contact-title reveal">Get in touch</h2>
+            <p class="contact-lead reveal">I'm available for freelance work and open to discussing new projects. Whether you need a complete build or an extra pair of senior hands, my inbox is open.</p>
+            <a href="mailto:awaisasad20@gmail.com" class="btn btn-primary btn-lg reveal"><i class="bi bi-envelope"></i> Say hello</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-6 mb-4 mb-md-0">
-                    <h5 class="mb-3">Social Links</h5>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/asad.awais.7" target="_blank" class="social-link">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com/awais_asad94" target="_blank" class="social-link">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/awais-asad/" target="_blank" class="social-link">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/awais-asad-hsol" target="_blank" class="social-link">
-                            <i class="bi bi-github"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h5 class="mb-3">Contact Me</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Building no 88, Sector C, Askari 11, Lahore, Pakistan</li>
-                        <li class="mb-2"><i class="bi bi-telephone me-2"></i><a href="tel:+923324255688" class="text-white text-decoration-none">+92-332-4255688</a></li>
-                        <li class="mb-2"><i class="bi bi-envelope me-2"></i><a href="mailto:awaisasad20@gmail.com" class="text-white text-decoration-none">awaisasad20@gmail.com</a></li>
-                    </ul>
-                </div>
+    <footer class="footer">
+        <div class="container center">
+            <div class="social-links">
+                <a href="https://github.com/awais-asad-hsol" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/awais-asad/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.facebook.com/asad.awais.7" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/awais_asad94" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             </div>
-            <hr class="bg-white opacity-25">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p class="mb-0">Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved</p>
-                </div>
-            </div>
+            <p class="mono footer-note">Designed &amp; built by Muhammad Awais Asad · © <span id="year"></span></p>
         </div>
     </footer>
 
-    <!-- Chatbot HTML -->
+    <!-- Chatbot -->
     <button id="chatbot-button" class="chatbot-button" aria-label="Open chat">
         <i class="bi bi-chat-dots"></i>
     </button>
 
     <div id="chatbot-container" class="chatbot-container">
         <div class="chatbot-header">
-            <h5><i class="bi bi-robot me-2"></i>Chat with me</h5>
-            <button id="chatbot-close" class="chatbot-close" aria-label="Close chat">
-                <i class="bi bi-x"></i>
-            </button>
+            <h5><i class="bi bi-robot"></i> Ask me anything</h5>
+            <button id="chatbot-close" class="chatbot-close" aria-label="Close chat"><i class="bi bi-x"></i></button>
         </div>
-        
-        <div id="chatbot-messages" class="chatbot-messages">
-            <!-- Messages will be inserted here -->
-        </div>
-        
-        <div id="chatbot-typing" class="chatbot-typing">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <div id="chatbot-typing" class="chatbot-typing"><span></span><span></span><span></span></div>
         <div class="chatbot-input-area">
-            <input 
-                type="text" 
-                id="chatbot-input" 
-                class="chatbot-input" 
-                placeholder="Type your message..."
-                aria-label="Chat input"
-            >
-            <button id="chatbot-send" class="chatbot-send" aria-label="Send message">
-                <i class="bi bi-send-fill"></i>
-            </button>
+            <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type your message..." aria-label="Chat input">
+            <button id="chatbot-send" class="chatbot-send" aria-label="Send message"><i class="bi bi-send-fill"></i></button>
         </div>
     </div>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
     <script src="js/custom.js"></script>
-    
-    <!-- Chatbot JS -->
     <script src="js/chatbot.js"></script>
 </body>
 </html>

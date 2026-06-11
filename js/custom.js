@@ -1,38 +1,32 @@
-// Custom Portfolio JavaScript
-(function() {
+// Portfolio JavaScript — dark minimal rebuild
+(function () {
     'use strict';
 
     // ============================================
-    // Text Rotator Animation
+    // Text rotator (typing effect)
     // ============================================
-    const TxtRotate = function(el, toRotate, period) {
+    function TxtRotate(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
         this.loopNum = 0;
         this.period = parseInt(period, 10) || 2000;
         this.txt = '';
-        this.tick();
         this.isDeleting = false;
-    };
+        this.tick();
+    }
 
-    TxtRotate.prototype.tick = function() {
+    TxtRotate.prototype.tick = function () {
         const i = this.loopNum % this.toRotate.length;
         const fullTxt = this.toRotate[i];
 
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+        this.txt = this.isDeleting
+            ? fullTxt.substring(0, this.txt.length - 1)
+            : fullTxt.substring(0, this.txt.length + 1);
 
         this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
-        let that = this;
-        let delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) {
-            delta /= 2;
-        }
+        let delta = 180 - Math.random() * 80;
+        if (this.isDeleting) delta /= 2;
 
         if (!this.isDeleting && this.txt === fullTxt) {
             delta = this.period;
@@ -40,249 +34,236 @@
         } else if (this.isDeleting && this.txt === '') {
             this.isDeleting = false;
             this.loopNum++;
-            delta = 500;
+            delta = 400;
         }
 
-        setTimeout(function() {
-            that.tick();
-        }, delta);
+        setTimeout(() => this.tick(), delta);
     };
 
-    // Initialize text rotator
-    window.onload = function() {
-        const elements = document.getElementsByClassName('txt-rotate');
-        for (let i = 0; i < elements.length; i++) {
-            const toRotate = elements[i].getAttribute('data-rotate');
-            const period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-                new TxtRotate(elements[i], JSON.parse(toRotate.replace(/'/g, '"')), period);
-            }
-        }
-    };
-
-    // ============================================
-    // Navbar Scroll Effect
-    // ============================================
-    window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('mainNav');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        // Update active nav link (only for main navigation, not tab buttons)
-        const sections = document.querySelectorAll('section[id]');
-        const scrollY = window.pageYOffset;
-
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 100;
-            const sectionId = current.getAttribute('id');
-            const navLink = document.querySelector(`#mainNav .nav-link[href="#${sectionId}"]`);
-
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                // Only remove active from main navbar links, not tab buttons
-                document.querySelectorAll('#mainNav .nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                if (navLink) {
-                    navLink.classList.add('active');
-                }
-            }
+    function initRotator() {
+        document.querySelectorAll('.txt-rotate').forEach(function (el) {
+            const toRotate = el.getAttribute('data-rotate');
+            const period = el.getAttribute('data-period');
+            if (toRotate) new TxtRotate(el, JSON.parse(toRotate), period);
         });
-    });
-
-    // ============================================
-    // Smooth Scroll for Navigation Links
-    // ============================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href.length > 1) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-
-    // ============================================
-    // Counter Animation
-    // ============================================
-    function animateCounter(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        const counterElement = element;
-
-        function updateCounter() {
-            start += increment;
-            if (start < target) {
-                counterElement.textContent = Math.floor(start);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counterElement.textContent = target;
-            }
-        }
-
-        updateCounter();
     }
 
-    // Intersection Observer for counter animation
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px'
-    };
+    // ============================================
+    // Navbar: scrolled state + mobile menu
+    // ============================================
+    function initNav() {
+        const nav = document.getElementById('mainNav');
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                entry.target.classList.add('animated');
-                const target = parseInt(entry.target.getAttribute('data-target'));
-                animateCounter(entry.target, target);
-            }
+        window.addEventListener('scroll', function () {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        if (toggle && links) {
+            toggle.addEventListener('click', function () {
+                const open = links.classList.toggle('open');
+                toggle.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open);
+            });
+            links.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    links.classList.remove('open');
+                    toggle.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    }
+
+    // ============================================
+    // Scroll reveal + animated counters
+    // ============================================
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const duration = 1200;
+        const start = performance.now();
+
+        function step(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            el.textContent = Math.floor(progress * target);
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    function initObservers() {
+        const revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(function (el) {
+            revealObserver.observe(el);
         });
-    }, observerOptions);
 
-    // Observe all counter elements
-    document.querySelectorAll('.stat-number').forEach(el => {
-        observer.observe(el);
-    });
-
-    // ============================================
-    // Skill Progress Animation
-    // ============================================
-    function animateSkillProgress() {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        
-        const skillObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated');
-                    const value = parseInt(entry.target.getAttribute('data-value'));
-                    const percentage = (value / 100) * 360;
-                    entry.target.style.background = `conic-gradient(var(--primary-color) ${percentage}deg, var(--bg-light) ${percentage}deg)`;
+        const counterObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
 
-        skillBars.forEach(bar => {
-            skillObserver.observe(bar);
+        document.querySelectorAll('.stat-number').forEach(function (el) {
+            counterObserver.observe(el);
         });
     }
 
-    // Initialize skill progress animation
-    animateSkillProgress();
-
     // ============================================
-    // Scroll Animations with Intersection Observer
+    // Scrollspy — highlight nav link for visible section
     // ============================================
-    const fadeInObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+    function initScrollspy() {
+        const links = Array.prototype.slice.call(
+            document.querySelectorAll('.nav-links a[href^="#"]')
+        );
+        const sections = links
+            .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+            .filter(Boolean);
 
-    // Apply fade-in animation to elements
-    document.querySelectorAll('.service-card, .project-card, .contact-card, .skill-category-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        fadeInObserver.observe(el);
-    });
-
-    // ============================================
-    // Navbar Toggle for Mobile
-    // ============================================
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 992) {
-                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                if (bsCollapse) {
-                    bsCollapse.hide();
-                }
-            }
-        });
-    });
-
-    // ============================================
-    // Professional Journey Tab Switching
-    // ============================================
-    const resumeTabButtons = document.querySelectorAll('#resumeTabs button[data-bs-toggle="tab"]');
-    const resumeTabPanes = document.querySelectorAll('#resumeTabsContent .tab-pane');
-
-    function switchResumeTab(clickedButton) {
-        // Get the target tab pane ID
-        const targetId = clickedButton.getAttribute('data-bs-target');
-        
-        // Remove active class and aria-selected from all nav buttons
-        resumeTabButtons.forEach(btn => {
-            btn.classList.remove('active');
-            btn.setAttribute('aria-selected', 'false');
-        });
-        
-        // Remove active and show classes from all tab panes
-        resumeTabPanes.forEach(pane => {
-            pane.classList.remove('active', 'show');
-        });
-        
-        // Add active class and aria-selected to clicked button
-        clickedButton.classList.add('active');
-        clickedButton.setAttribute('aria-selected', 'true');
-        
-        // Show the target tab pane
-        const targetPane = document.querySelector(targetId);
-        if (targetPane) {
-            targetPane.classList.add('active', 'show');
+        function setActive(id) {
+            links.forEach(function (link) {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
         }
+
+        const spy = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) setActive(entry.target.id);
+            });
+        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+        sections.forEach(function (section) { spy.observe(section); });
+
+        // Clear highlight when back at the hero
+        window.addEventListener('scroll', function () {
+            if (window.scrollY < 200) setActive('');
+        }, { passive: true });
     }
 
-    // Add click event listeners to all tab buttons
-    resumeTabButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            switchResumeTab(this);
+    // ============================================
+    // Project screenshot galleries + lightbox
+    // ============================================
+    let lightbox, lightboxImg, lightboxCounter;
+    let lbSources = [];
+    let lbIndex = 0;
+
+    function buildLightbox() {
+        lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML =
+            '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+            '<button class="gallery-btn prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>' +
+            '<img alt="Screenshot enlarged">' +
+            '<button class="gallery-btn next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>' +
+            '<div class="lightbox-counter"></div>';
+        document.body.appendChild(lightbox);
+
+        lightboxImg = lightbox.querySelector('img');
+        lightboxCounter = lightbox.querySelector('.lightbox-counter');
+
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.gallery-btn.prev').addEventListener('click', function (e) { e.stopPropagation(); lbShow(lbIndex - 1); });
+        lightbox.querySelector('.gallery-btn.next').addEventListener('click', function (e) { e.stopPropagation(); lbShow(lbIndex + 1); });
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
         });
-    });
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+            if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+        });
+    }
 
-    // Initialize Skills tab as active on page load
-    window.addEventListener('DOMContentLoaded', function() {
-        const skillsButton = document.getElementById('skills-tab');
-        const skillsPane = document.getElementById('skills-tab-content');
-        
-        // Ensure Skills tab is active
-        if (skillsButton && skillsPane) {
-            // Remove active from all buttons
-            resumeTabButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-selected', 'false');
-            });
-            
-            // Remove active/show from all panes
-            resumeTabPanes.forEach(pane => {
-                pane.classList.remove('active', 'show');
-            });
-            
-            // Set Skills as active
-            skillsButton.classList.add('active');
-            skillsButton.setAttribute('aria-selected', 'true');
-            skillsPane.classList.add('active', 'show');
-        }
-    });
+    function lbShow(i) {
+        lbIndex = (i + lbSources.length) % lbSources.length;
+        lightboxImg.src = lbSources[lbIndex];
+        lightboxCounter.textContent = (lbIndex + 1) + ' / ' + lbSources.length;
+    }
 
+    function openLightbox(sources, startIndex) {
+        lbSources = sources;
+        lbShow(startIndex);
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function initGalleries() {
+        buildLightbox();
+
+        document.querySelectorAll('.project-gallery').forEach(function (gallery) {
+            const images = Array.prototype.slice.call(gallery.querySelectorAll('img'));
+            const dotsWrap = gallery.querySelector('.gallery-dots');
+            const sources = images.map(function (img) { return img.getAttribute('src'); });
+            let index = 0;
+
+            // Click active image to expand
+            images.forEach(function (img) {
+                img.addEventListener('click', function () {
+                    openLightbox(sources, index);
+                });
+            });
+
+            if (images.length < 2) return;
+
+            const dots = images.map(function (_, i) {
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', 'Screenshot ' + (i + 1));
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', function () { show(i); });
+                dotsWrap.appendChild(dot);
+                return dot;
+            });
+
+            function show(i) {
+                images[index].classList.remove('active');
+                dots[index].classList.remove('active');
+                index = (i + images.length) % images.length;
+                images[index].classList.add('active');
+                dots[index].classList.add('active');
+            }
+
+            gallery.querySelector('.gallery-btn.prev').addEventListener('click', function () { show(index - 1); });
+            gallery.querySelector('.gallery-btn.next').addEventListener('click', function () { show(index + 1); });
+        });
+    }
+
+    // ============================================
+    // Footer year
+    // ============================================
+    function initYear() {
+        const year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    }
+
+    function init() {
+        initRotator();
+        initNav();
+        initScrollspy();
+        initObservers();
+        initGalleries();
+        initYear();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();
