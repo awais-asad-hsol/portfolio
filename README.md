@@ -12,6 +12,7 @@ Proven experience leading technical initiatives, architecting Single Sign-On (SS
 
 Passionate about building reliable, secure, and future-ready systems while leveraging AI-powered solutions, automation workflows, and modern engineering practices to solve complex business challenges.
 
+
 ## Experience
 
 ### Tech Lead — HeuristicSol Pvt Ltd (Aug 2022 - Present)
