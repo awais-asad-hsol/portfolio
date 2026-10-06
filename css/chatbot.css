@@ -222,9 +222,78 @@
 .chatbot-send:hover:not(:disabled) { filter: brightness(1.1); }
 .chatbot-send:disabled { opacity: 0.5; cursor: not-allowed; }
 
-@media (max-width: 480px) {
-    .chatbot-container {
+/* Mobile: full-screen chat panel */
+@media (max-width: 576px) {
+    .chatbot-button {
+        width: 52px;
+        height: 52px;
         right: 16px;
-        bottom: 88px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        font-size: 1.35rem;
+    }
+
+    .chatbot-container {
+        inset: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        max-height: none;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        transform: translateY(24px);
+        overscroll-behavior: contain;
+    }
+
+    /* Hide the floating button while the full-screen chat is open */
+    body:has(.chatbot-container.active) .chatbot-button {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .chatbot-header {
+        padding: 0.75rem 0.75rem 0.75rem 1rem;
+        padding-top: calc(0.75rem + env(safe-area-inset-top, 0px));
+    }
+    .chatbot-header h5 { font-size: 1rem; }
+    .chatbot-close {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+    }
+
+    .chatbot-messages {
+        padding: 0.9rem;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+    .chatbot-message { max-width: 88%; }
+    .chatbot-message-bubble { font-size: 0.92rem; }
+
+    .chatbot-chip {
+        font-size: 0.82rem;
+        padding: 0.5rem 0.9rem;
+        text-align: left;
+    }
+
+    .chatbot-typing { padding: 0 0.9rem 0.7rem; }
+
+    .chatbot-input-area {
+        padding: 0.7rem 0.75rem;
+        padding-bottom: calc(0.7rem + env(safe-area-inset-bottom, 0px));
+    }
+    /* 16px prevents iOS Safari from zooming in on focus */
+    .chatbot-input {
+        font-size: 16px;
+        min-height: 44px;
+        min-width: 0;
+    }
+    .chatbot-send {
+        width: 44px;
+        min-height: 44px;
     }
 }
